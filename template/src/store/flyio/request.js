@@ -5,7 +5,9 @@ import Config from './config'
 const errorFunction = (reqConfig, err) => {
   // 如果有异常需要提示
   if (!reqConfig.errorAction && reqConfig.isErrorDefaultTip) {
-    Config.resError.tipShow()
+    setTimeout(() => { 
+      Config.resError.tipShow()
+    }, 0)
   }
   throw (err)
 }
@@ -49,10 +51,10 @@ const handleRequest = (url = '', data = {}) => {
         tipConfig.isLoading && Config.loading.loadingHide() // 当promise全部加载完成则隐藏loading
         return res
       } else {
-        setTimeout(() => { errorFunction(tipConfig, res) }, 0)
+        errorFunction(tipConfig, res)
       }
     }).catch(err => {
-      setTimeout(() => { errorFunction(tipConfig, err) }, 0)
+      errorFunction(tipConfig, err)
     })
   }
 }
