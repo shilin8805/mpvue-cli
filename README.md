@@ -160,3 +160,10 @@ export default {
 
 1.[vue文件中不能缺少script标签](https://github.com/Meituan-Dianping/mpvue/issues/562)，否则会导致编译不了。
 
+2.每个页面都要适配iphoneX，padding-bottom: 34px。可参考其他页面实现方式。注：底部无操作的话就不用将页面顶上去。
+
+3.slot插槽数据渲染有问题 https://github.com/Meituan-Dianping/mpvue/issues/427
+
+4.页面初始化的data方式 Object.assign(this.$data, this.$options.data())
+
+5.mpvue-loader更新到1.1.x更改了入口后，运行本项目会有问题，暂定将mpvue-loader锁定在1.0.14版本。等后续有时间再来优化这个东西。
