@@ -5,7 +5,7 @@ import Config from './config'
 const errorFunction = (reqConfig, err) => {
   // 如果有异常需要提示
   if (!reqConfig.errorAction && reqConfig.isErrorDefaultTip) {
-    setTimeout(() => { 
+    setTimeout(() => {
       Config.resError.tipShow()
     }, 0)
   }
